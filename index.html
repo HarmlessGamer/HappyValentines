@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Happy Valentines Day ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff7aa2, #ffd1dc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+}
+
+/* Main card */
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    max-width: 360px;
+    z-index: 10;
+}
+
+/* Image */
+.photo {
+    width: 200px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+/* Text */
+h1 {
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Floating roses & hearts */
+.float {
+    position: absolute;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="title">🌹 Happy Valentines Day Sweets ❤️</div>
+
+    <div class="message">
+        A pinky promise for today… <br>
+        And for all the days after. <br><br>
+
+        I am really lucky to have you, <br>
+        I will always be grateful to God <br>
+        and how he brought us together ❤️ <br><br>
+
+        You are Amazing, Beautiful, and a Cutie Pie 🤗
+        I promise to always be here for you 🤞🏾 <br><br>
+
+        <b>Sweets,</b> <br>
+        <b>HAPPY VALENTINES DAY!🌹</b>
+    </div>
+
+</div>
+
+<script>
+/* Only roses & hearts floating */
+function createFloat() {
+    const item = document.createElement("div");
+    item.classList.add("float");
+
+    const symbols = ["🌹", "❤️"];
+    item.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (18 + Math.random() * 25) + "px";
+    item.style.animationDuration = (6 + Math.random() * 4) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 9000);
+}
+
+setInterval(createFloat, 350);
+</script>
+
+</body>
+</html>
